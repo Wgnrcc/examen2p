@@ -1,0 +1,42 @@
+/* Estilos para el encabezado */
+header {
+    background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección a columna */
+    align-items: center; /* Centrar verticalmente los elementos */
+    
+}
+/* Estilos para el logo */
+.logo {
+    display: inline-block;
+    text-align: center;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: beige;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+
+<body>
+<div class="login">
+	<h1>Formulario de Ingreso</h1>
+    <form id="formulario" method="post" action="html/principal.html">
+    	<input type="text" id="usuario" name="u" placeholder="Usuario" required="required" />
+        <input type="password" id="contraseña"  name="p" placeholder="Contraseña" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Iniciar sesión</button>
+    </form>
+</div>
+
+<script>
+    const formulario = document.getElementById('formulario');
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch('https://sheet.best/api/sheets/e9b6dc31-a7b1-466b-a49b-44a5c7429964', {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "usuario": formulario["u"].value,
+                "contraseña": formulario["p"].value
+            }),
+        })
+        .then(respuesta => {
+            if (respuesta.ok) {
+                alert('Acceso al sistema exitoso');
+            } else {
+                alert('error al acceder al sistema');
+            }
+        });
+    });
+</script>
+</body>
+</html>
+
